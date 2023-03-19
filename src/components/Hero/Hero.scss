@@ -158,3 +158,48 @@
     }
   }
 }
+
+@media screen and (min-width: 768px) and (max-width: 1440px) {
+  .hero-container {
+    padding: 70px 50px 0 50px;
+
+    .hero-content {
+      .right-container {
+        .heading {
+          h1 {
+            font-size: 20px;
+            width: 270px;
+          }
+        }
+      }
+
+      .left-container {
+        width: 48%;
+        height: 363px;
+
+        .left-container-content {
+          padding: 60px 20px 0 0;
+          margin: 0;
+
+          p {
+            width: 80%;
+            margin: 0 auto;
+            font-size: 17px;
+          }
+        }
+      }
+    }
+    .image-layout {
+      position: absolute;
+      top: 149px;
+      left: 0;
+      right: -157px;
+      width: 96.5%;
+      z-index: -1;
+
+      img {
+        width: 100% !important;
+      }
+    }
+  }
+}
