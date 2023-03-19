@@ -1,0 +1,147 @@
+.services-container {
+  margin-bottom: 60px;
+  .heading {
+    padding: 0px 160px 35px 0;
+
+    h1 {
+      font-family: $PrimaryFontFamily;
+      font-weight: $PriamryFontWeight;
+      font-size: $SecondaryFontSize;
+      line-height: $TitleLineHeight;
+      margin-bottom: 0.5rem;
+    }
+
+    h4 {
+      font-family: $PrimaryFontFamily;
+      font-weight: $PriamryFontWeight;
+      font-size: $PrimaryFontSize;
+      line-height: $PrimaryLineHeight;
+      color: $TextColor;
+    }
+  }
+
+  .services-row {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+
+    .services-item {
+      position: relative;
+      &:nth-child(even) .img-container .layout,
+      &:nth-child(odd) .img-container .layout {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 99.4%;
+      }
+
+      &:nth-child(even) .img-container .layout {
+        background: rgba(49, 185, 138, 0.5);
+      }
+
+      &:nth-child(odd) .img-container .layout {
+        background: rgba(12, 116, 175, 0.5);
+      }
+
+      .img-container {
+        position: relative;
+
+        img {
+          width: 200px;
+          height: 640px;
+          object-fit: cover;
+          transition: all 0.4s ease-in-out;
+        }
+      }
+
+      .service-content {
+        position: absolute;
+        top: 50%;
+        left: 35%;
+        transform: translate(-18%, -30%);
+        transition: all 0.3s ease-in-out;
+
+        h3 {
+          position: relative;
+          font-family: $PrimaryFontFamily;
+          font-weight: $SecondaryFontWeight;
+          font-size: $SecondaryFontSize;
+          line-height: $TitleLineHeight;
+          color: $LightColor;
+          margin-bottom: 2rem;
+          display: inline-block;
+
+          &::after {
+            position: absolute;
+            content: "";
+            top: 50px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: $TextColor;
+          }
+        }
+
+        p {
+          font-family: $PrimaryFontFamily;
+          font-weight: $PriamryFontWeight;
+          font-size: $TertiaryFontSize;
+          line-height: $TextLineHeight;
+          color: $LightColor;
+        }
+
+        .button-container {
+          margin-right: 0;
+          transition: all 0.5s ease;
+
+          h4 {
+            transition: all 0.5s ease;
+          }
+
+          &:hover {
+            background-color: transparent;
+
+            h4 {
+              transform: translateX(1rem);
+              margin-right: 0;
+            }
+            .icon {
+              background-color: $ButtonBackgroundColor;
+              width: 50px;
+              height: 50px;
+            }
+            path {
+              stroke: $LightColor;
+            }
+          }
+        }
+      }
+
+      .not-active {
+        position: absolute;
+        bottom: 50px;
+        left: 46px;
+        width: 60%;
+
+        h3 {
+          font-family: $PrimaryFontFamily;
+          font-weight: $PriamryFontWeight;
+          font-size: $HeadingFontSize;
+          line-height: $SecondaryTitleLineHeight;
+          color: $LightColor;
+          text-align: center;
+        }
+      }
+      &.active {
+        .layout {
+          background: rgba(0, 0, 0, 0.5) !important;
+        }
+        img {
+          width: 640px !important;
+          height: 640px !important;
+        }
+      }
+    }
+  }
+}

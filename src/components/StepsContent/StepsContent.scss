@@ -1,0 +1,151 @@
+.container {
+  padding: 60px 160px 60px 160px;
+  position: relative;
+
+  .heading {
+    h1 {
+      font-family: $PrimaryFontFamily;
+      font-weight: $PriamryFontWeight;
+      font-size: $SecondaryFontSize;
+      line-height: $TitleLineHeight;
+      margin-bottom: 0.5rem;
+    }
+
+    h4 {
+      font-family: $PrimaryFontFamily;
+      font-weight: $PriamryFontWeight;
+      font-size: $PrimaryFontSize;
+      line-height: $PrimaryLineHeight;
+      color: $TextColor;
+    }
+  }
+
+  .steps-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3rem;
+
+    .step-container {
+      background-color: $LightColor;
+
+      h5 {
+        position: relative;
+        width: 116.07px;
+        height: 84px;
+        border: 1px solid $BadgeTextColor;
+        border-radius: 112px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: $PrimaryFontFamily;
+        font-weight: $PriamryFontWeight;
+        font-size: $PrimaryFontSize;
+        line-height: $TertiaryLineHeight;
+        padding: 0 2px;
+        text-align: center;
+      }
+
+      &:not(:last-child) {
+        ::after {
+          position: absolute;
+          content: "";
+          z-index: -1;
+          right: 100%;
+          width: 39.71px;
+          height: 2px;
+          background-color: $StepsBackgroundColor;
+        }
+      }
+
+      &.active {
+        color: $LightColor;
+        border-radius: 112px;
+        position: relative;
+        &::before {
+          content: "";
+          display: block;
+          position: absolute;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          background-color: $BadgeTextColor;
+          border-radius: 112px;
+          animation: moving 1s linear alternate;
+        }
+
+        &:not(:last-child) {
+          ::after {
+            position: absolute;
+            content: "";
+            z-index: -1;
+            right: 100%;
+            width: 39.71px;
+            height: 2px;
+            background-color: $BadgeTextColor;
+          }
+        }
+
+        @keyframes moving {
+          0% {
+            top: 50%;
+            transform: translate(0, -50%);
+            width: 0;
+            height: 10%;
+          }
+
+          50% {
+            width: 100%;
+            height: 100%;
+          }
+
+          100% {
+            top: 0;
+            transform: translate(0, 0);
+          }
+        }
+      }
+    }
+  }
+  .step-content-container {
+    height: 116px;
+    margin-top: 2rem;
+    background-color: $HeroImageButtonColor;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 16px;
+
+    .step-number {
+      width: 156px;
+      height: 116px;
+      background-color: $StepNumberBackgroundColor;
+      border-radius: 16px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      h1 {
+        font-family: $PrimaryFontFamily;
+        font-weight: $PriamryFontWeight;
+        font-size: $StepNumberFontSize;
+        line-height: $StepNumberLineHeight;
+        color: $LightColor;
+      }
+    }
+
+    .step-content {
+      width: 67%;
+      p {
+        font-family: $PrimaryFontFamily;
+        font-weight: $PriamryFontWeight;
+        font-size: $TertiaryFontSize;
+        line-height: $TextLineHeight;
+        color: $LightColor;
+      }
+    }
+
+    img {
+      margin-left: 2rem;
+    }
+  }
+}

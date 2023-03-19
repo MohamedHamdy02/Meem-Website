@@ -1,0 +1,158 @@
+.hero-container {
+  padding: 75px 160px 0 160px;
+  position: relative;
+
+  .hero-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .right-container {
+      width: 35%;
+
+      .badge-container {
+        width: 162.41px;
+        height: 42px;
+        background-color: $BadgeBackgroundColor;
+        border-radius: 25px;
+        margin-bottom: 1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        h4 {
+          font-family: $PrimaryFontFamily;
+          font-weight: $PriamryFontWeight;
+          font-size: $PrimaryFontSize;
+          line-height: $PrimaryLineHeight;
+          color: $BadgeTextColor;
+        }
+      }
+      .heading {
+        h1 {
+          font-family: $PrimaryFontFamily;
+          font-weight: $PriamryFontWeight;
+          font-size: $SecondaryFontSize;
+          line-height: $SecondaryLineHeight;
+        }
+      }
+    }
+
+    .left-container {
+      width: 690px;
+      height: 363px;
+      background-color: $BackgroundColor;
+      border-radius: 0px 0px 106px 0px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+
+      .left-container-content {
+        margin: 130px 40px 0 105px;
+
+        .text-wrapper {
+          display: flex;
+          justify-content: space-between;
+          align-items: baseline;
+        }
+
+        p {
+          width: 485px;
+          font-family: $PrimaryFontFamily;
+          font-weight: $PriamryFontWeight;
+          font-size: $PrimaryFontSize;
+          line-height: $PrimaryLineHeight;
+        }
+      }
+    }
+  }
+
+  .image-container {
+    cursor: pointer;
+    position: relative;
+    margin-top: 4rem;
+
+    img {
+      width: 100%;
+    }
+
+    &:hover .hero-image-button .layout {
+      display: block;
+      opacity: 1;
+      animation: fade 2s infinite alternate;
+    }
+
+    .hero-image-button {
+      width: 99.27px;
+      height: 99.27px;
+      border-radius: 237px;
+      background-color: $HeroImageButtonColor;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      .layout {
+        display: none;
+        position: absolute;
+        width: 148.91px;
+        height: 148.91px;
+        border-radius: 237px;
+        border: 1px solid $LightColor;
+        opacity: 0.5;
+        transition: opacity 2s;
+
+        &::after {
+          content: "";
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 182px;
+          height: 182px;
+          border-radius: 237px;
+          border: 1px solid $LightColor;
+          opacity: 25%;
+        }
+
+        &::before {
+          content: "";
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 122.44px;
+          height: 122.44px;
+          border-radius: 237px;
+          border: 1px solid $LightColor;
+        }
+
+        @keyframes fade {
+          0% {
+            opacity: 1;
+          }
+          100% {
+            opacity: 0;
+          }
+        }
+      }
+    }
+
+    .image-layout {
+      position: absolute;
+      top: 149px;
+      left: 0;
+      right: -157px;
+      width: 96.5%;
+      z-index: -1;
+
+      img {
+        width: 131%;
+      }
+    }
+  }
+}

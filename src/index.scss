@@ -1,0 +1,19 @@
+// FONT FAMILY
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&display=swap");
+
+// Variables
+@import "./utils/variables";
+
+// COMPONENTS
+@import "./components/Hero/Hero";
+@import "./components/Buttons/Buttons";
+@import "./components/StepsContent/StepsContent";
+@import "./components/Servses/service";
+@import "./components/Footer/Footer";
+
+// RESET STYLES
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
