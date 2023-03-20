@@ -95,28 +95,6 @@
 
         .button-container {
           margin-right: 0;
-          transition: all 0.5s ease;
-
-          h4 {
-            transition: all 0.5s ease;
-          }
-
-          &:hover {
-            background-color: transparent;
-
-            h4 {
-              transform: translateX(1rem);
-              margin-right: 0;
-            }
-            .icon {
-              background-color: $ButtonBackgroundColor;
-              width: 50px;
-              height: 50px;
-            }
-            path {
-              stroke: $LightColor;
-            }
-          }
         }
       }
 
@@ -288,6 +266,163 @@
         }
         &.active {
           width: 37%;
+          .layout {
+            background: rgba(0, 0, 0, 0.5) !important;
+          }
+          img {
+            width: 100% !important;
+            height: 640px !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .services-container {
+    margin-bottom: 60px;
+    .heading {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0px 20px 35px 0;
+      max-width: 1440px;
+      margin: 0 auto;
+
+      h1 {
+        font-family: $PrimaryFontFamily;
+        font-weight: $PriamryFontWeight;
+        font-size: $SecondaryFontSize;
+        line-height: $TitleLineHeight;
+        margin-bottom: 0.5rem;
+      }
+
+      h4 {
+        font-family: $PrimaryFontFamily;
+        font-weight: $PriamryFontWeight;
+        font-size: $PrimaryFontSize;
+        line-height: $PrimaryLineHeight;
+        color: $TextColor;
+      }
+    }
+
+    .services-row {
+      position: relative;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      overflow: hidden;
+
+      .services-item {
+        position: relative;
+        width: 100%;
+        &:nth-child(even) .img-container .layout,
+        &:nth-child(odd) .img-container .layout {
+          position: absolute;
+          top: 0;
+          width: 100%;
+          height: 99.4%;
+        }
+
+        &:nth-child(even) .img-container .layout {
+          background: rgba(49, 185, 138, 0.5);
+        }
+
+        &:nth-child(odd) .img-container .layout {
+          background: rgba(12, 116, 175, 0.5);
+        }
+
+        .img-container {
+          position: relative;
+
+          img {
+            width: 100%;
+            height: 640px;
+            object-fit: cover;
+            transition: all 0.5s ease-in-out;
+          }
+        }
+        .service-content {
+          position: absolute;
+          top: 50%;
+          left: 35%;
+          transform: translate(-18%, -30%);
+          transition: all 0.5s ease-in-out;
+
+          h3 {
+            position: relative;
+            font-family: $PrimaryFontFamily;
+            font-weight: $SecondaryFontWeight;
+            font-size: $SecondaryFontSize;
+            line-height: $TitleLineHeight;
+            color: $LightColor;
+            margin-bottom: 2rem;
+            display: inline-block;
+
+            &::after {
+              position: absolute;
+              content: "";
+              top: 50px;
+              left: 0;
+              width: 100%;
+              height: 2px;
+              background-color: $TextColor;
+            }
+          }
+          p {
+            font-family: $PrimaryFontFamily;
+            font-weight: $PriamryFontWeight;
+            font-size: 18px;
+            line-height: $TextLineHeight;
+            color: $LightColor;
+          }
+
+          .button-container {
+            margin-right: 0;
+            transition: all 0.5s ease;
+
+            h4 {
+              transition: all 0.5s ease;
+            }
+
+            &:hover {
+              background-color: transparent;
+
+              h4 {
+                transform: translateX(1rem);
+                margin-right: 0;
+              }
+              .icon {
+                background-color: $ButtonBackgroundColor;
+                width: 50px;
+                height: 50px;
+              }
+              path {
+                stroke: $LightColor;
+              }
+            }
+          }
+        }
+
+        .not-active {
+          position: absolute;
+          bottom: 8%;
+          left: 50%;
+          transform: translate(-50%, 0%);
+          width: 60%;
+
+          h3 {
+            font-family: $PrimaryFontFamily;
+            font-weight: $PriamryFontWeight;
+            font-size: 30px;
+            line-height: $SecondaryTitleLineHeight;
+            color: $LightColor;
+            text-align: center;
+          }
+        }
+        &.active {
+          width: 100%;
           .layout {
             background: rgba(0, 0, 0, 0.5) !important;
           }

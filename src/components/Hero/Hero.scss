@@ -67,6 +67,15 @@
           line-height: $PrimaryLineHeight;
         }
       }
+      .button-container {
+        transition: all 0.5s ease;
+        &:hover {
+          color: $HeadingColor;
+          h4 {
+            transition: all 0.5s ease;
+          }
+        }
+      }
     }
   }
 
@@ -190,16 +199,89 @@
       }
     }
     .image-layout {
-      position: absolute;
-      top: 149px;
-      left: 0;
-      right: -157px;
-      width: 96.5%;
-      z-index: -1;
+      display: none;
+    }
+  }
+}
 
-      img {
-        width: 100% !important;
+@media screen and (max-width: 767px) {
+  .hero-container {
+    padding: 40px 20px 40px 20px;
+
+    .hero-content {
+      flex-wrap: wrap;
+      .right-container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .heading {
+          margin-bottom: 20px;
+          h1 {
+            font-size: 20px;
+            width: 270px;
+          }
+        }
       }
+
+      .left-container {
+        border-radius: 0px 0px 0px 0px;
+        position: unset;
+        width: 100%;
+        height: 363px;
+        margin-bottom: 20px;
+
+        .left-container-content {
+          padding: 50px 20px 0 0;
+          margin: 0;
+
+          p {
+            width: 80%;
+            margin: 0 auto;
+            font-size: 17px;
+          }
+        }
+      }
+    }
+    .image-container {
+      margin-top: 1rem;
+
+      .hero-image-button {
+        width: 70px;
+        height: 70px;
+
+        .layout {
+          display: none;
+          position: absolute;
+          width: 130px;
+          height: 130px;
+          border-radius: 237px;
+          border: 1px solid $LightColor;
+          opacity: 0.5;
+          transition: opacity 2s;
+
+          &::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 85px;
+            height: 85px;
+            border-radius: 237px;
+            border: 1px solid $LightColor;
+            opacity: 50%;
+          }
+
+          &::before {
+            width: 105px;
+            height: 105px;
+          }
+        }
+      }
+    }
+    .image-layout {
+      display: none;
     }
   }
 }
